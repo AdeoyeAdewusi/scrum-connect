@@ -1,0 +1,47 @@
+<p class="error">{{ errorMessage }}</p>
+<table class="table mt-3">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">City</th>
+      <th scope="col">6 AM</th>
+      <th scope="col">12 PM</th>
+      <th scope="col">6 PM</th>
+      <th scope="col">12 AM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let place of tableArray">
+      <td scope="row">{{ place.city.name }}</td>
+      <td scope="row">
+        {{ place.list[0].main.temp }} &deg;
+        <span>
+          <img [src]="test(place.list[0].weather[0].main)" alt="cloud"
+        /></span>
+      </td>
+      <td scope="row">
+        {{ place.list[2].main.temp }} &deg;
+
+        <span
+          ><img [src]="test(place.list[2].weather[0].main)" alt="cloud"
+        /></span>
+      </td>
+      <td scope="row">
+        {{ place.list[4].main.temp }} &deg;
+        <span
+          ><img [src]="test(place.list[4].weather[0].main)" alt="cloud"
+        /></span>
+      </td>
+      <td scope="row">
+        {{ place.list[6].main.temp }} &deg;
+        <span
+          ><img [src]="test(place.list[6].weather[0].main)" alt="cloud"
+        /></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- </ng-template> -->
+<!-- <ng-template #rain>
+  <img src="../../../../assets/rain.gif" alt="cloud" />
+</ng-template> -->
